@@ -5,6 +5,8 @@ body {
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: 400px 500px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 
@@ -34,7 +36,7 @@ ul, tr {
   font-size: 17px;
 }
 
-#wrapper { width: 1127px; margin: 0 auto; }
+/* #wrapper { width: 1127px; margin: 0 auto; } */
 
 .stretch {
     border: 20px solid transparent;
@@ -67,7 +69,8 @@ ul, tr {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  max-width: 50%;
+
 }
 
 .center1 {
@@ -86,7 +89,7 @@ ul, tr {
 .banner {
    background-image: url('banner.jpg');
   height: 250px;
-  width: 1127px;
+  width: 100%;
 
     color: white;
     font-family: optima, sans-serif;
@@ -96,10 +99,14 @@ ul, tr {
     padding-top: 50px;
 }
 
-.columns {
-  column-count: 3;
-  column-rule-style: solid;
-  column-rule-width: 1px;
+.requirements-columns{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.requirement-columns-items{
+  width: 33%;
 }
 
 h2 {
@@ -193,4 +200,60 @@ a[href^="#"] {
     left:0;
     top:0;
     position:absolute;
+}
+
+@media screen and (max-width: 1023px) {
+
+.requirements-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;}
+
+.requirements-columns-items{
+  width: 50%;
+}
+
+.banner {
+  height: 5em;
+  width: auto;
+  font-size: 3em;
+}
+
+.center1 {
+  width: auto;
+}
+.center2 {
+  max-width: 50%;
+  width: auto;
+}
+
+}
+
+@media screen and (max-width: 767px){
+
+  .requirements-columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .requirements-columns-items{
+    width: 100%;
+  }
+
+  .banner {
+    height: 5em;
+    width: auto;
+    font-size: 3em;
+}
+
+  .center1 {
+    width: auto;
+}
+
+.center2 {
+  max-width: none;
+  width: 100%;
+}
+
 }
